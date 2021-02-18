@@ -17,7 +17,7 @@ class Form_1 extends React.Component {
               Name
               <input type="text" name="name"id="name" placeholder="Full name" required />
             </label>
-          </diva
+          </div>
           <div className="email">
             <label for="email">
               Email
