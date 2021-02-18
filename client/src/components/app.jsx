@@ -3,6 +3,8 @@ import Form_1 from './form-1.js';
 import Form_2 from './form-2.js';
 import Form_3 from './form-3.js';
 import Confirmation from './confirmation.js';
+// import React from 'react';
+// import axios from 'axios';
 
 class App extends React.Component {
   constructor () {
@@ -12,8 +14,8 @@ class App extends React.Component {
     };
     this.onNextClick = this.onNextClick.bind(this);
     this.onPrevClick = this.onPrevClick.bind(this);
-    this.onFormSubmit = this.onFormSubmit.bind(this);
     this.onCheckoutClick = this.onCheckoutClick.bind(this);
+    this.postUser = this.postUser.bind(this);
     this.Render = this.Render.bind(this);
   }
 
@@ -41,8 +43,14 @@ class App extends React.Component {
     })
   }
 
-  onFormSubmit(e) {
-    e.preventDefault();
+  postUser(user, callback) {
+    axios.post('/users', user)
+    .then(callback)
+    .catch(callback)
+  }
+
+  addUser(user) {
+
   }
 
   Render(props) {
@@ -51,11 +59,11 @@ class App extends React.Component {
     if (current === 0) {
       return <Checkout onClick={this.onCheckoutClick}/>
     } else if (current === 1) {
-      return <Form_1 onFormSubmit={this.onFormSubmit}/>
+      return <Form_1 />
     } else if (current === 2) {
-      return <Form_2 onFormSubmit={this.onFormSubmit}/>
+      return <Form_2 />
     } else if (current === 3) {
-      return <Form_3 onFormSubmit={this.onFormSubmit}/>
+      return <Form_3 />
     } else if (current === 4) {
       return <Confirmation />
     }

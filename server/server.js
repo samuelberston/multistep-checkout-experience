@@ -19,12 +19,12 @@ app.post('/users',
   function(req, res) {
     console.log('req: ', req);
     console.log('res: ', res);
-    const query = `INSERT INTO users (name, email, password) VALUES ('${req.body.name}', '${req.body.email}', '${req.body.password}')`;
+    // const query = `INSERT INTO users (name, email, password) VALUES ('${req.body.name}', '${req.body.email}', '${req.body.password}')`;
 
-    db.query(query, (err, result) => {
-      if (err) { throw err; }
-      console.log(result);
-    })
+    // db.query(query, (err, result) => {
+    //   if (err) { throw err; }
+    //   console.log(result);
+    // })
 })
 
 app.post('/shipping', function(req, res) {
