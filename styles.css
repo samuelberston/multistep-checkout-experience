@@ -1,0 +1,177 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(234, 255, 234);
+  text-align: center;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  /* grid-column: 2; */
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.app h1 {
+  grid-column: 2;
+}
+
+.nav {
+  align-self: center;
+  justify-self: center;
+  height: 40px;
+  width: 120px;
+  background-color: rgb(109, 255, 121);
+  border: solid 2px rgb(90, 230, 101);
+  border-radius: 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.nav:hover {
+  background-color: rgb(159, 255, 167);
+}
+
+.prev {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.next {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+/* checkout */
+.checkout {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  padding: 10px;
+  margin: 10px;
+  border: solid 2px seagreen;
+  border-radius: 10px;
+  background-color: rgb(220, 255, 220);
+}
+
+.checkout .items {
+  border: dotted 2px seagreen;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+}
+
+.checkout .item {
+  align-self: center;
+  display: grid;
+  width: auto;
+  grid-template-columns: 1fr 2fr;
+  border: dotted 2px seagreen;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 5px;
+}
+
+.checkout .item img {
+  grid-column: 1;
+  grid-row: 1/4;
+  height: 150px;
+}
+
+
+.checkout .item p {
+  grid-column: 2;
+}
+
+.checkout .checkout-btn {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  justify-self: center;
+  align-self: center;
+  border: dotted 2px seagreen;
+  border-radius: 20px;
+  background-color: rgb(255, 255, 255);
+  margin-top: 10px;
+  padding: 10px;
+}
+
+/* Form 1: Sign Up */
+.form-1 {
+  grid-column: 2;
+  height: 260px;
+  padding: 10px;
+  margin: 10px;
+  border: solid 2px seagreen;
+  background-color: rgb(224, 251, 224);
+}
+
+.form-1 form {
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: dotted 2px seagreen;
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+}
+
+.form-1 form p {
+  font-style: italic;
+}
+
+/* Form 2: Shipping Info */
+
+.form-2 {
+  grid-column: 2;
+  height: 260px;
+  padding: 10px;
+  margin: 10px;
+  border: solid 2px seagreen;
+  background-color: rgb(224, 251, 224);
+}
+
+.form-2 form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: dotted 2px seagreen;
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+}
+
+/* Form 3: Billing Info */
+
+.form-3 {
+  grid-column: 2;
+  height: 260px;
+  padding: 10px;
+  margin: 10px;
+  border: solid 2px seagreen;
+  background-color: rgb(224, 251, 224);
+}
+
+.form-3 form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: dotted 2px seagreen;
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+}
+
+/* Confirmation */
+
+.confirmation {
+  grid-column: 2;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+  border: solid 2px seagreen;
+  background-color: rgb(224, 251, 224);
+}
