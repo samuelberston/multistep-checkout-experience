@@ -19,7 +19,7 @@ class Form_1 extends React.Component {
   handleSubmit(event) {
     console.log('submit');
     event.preventDefault();
-    
+    this.props.postUser();
     this.setState({
       name: '',
       email: '',
@@ -31,7 +31,7 @@ class Form_1 extends React.Component {
     return(
       <div className="form-1">
         <h1>Sign Up</h1>
-        <form action="/users" method="post" onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
         <p>Enter your account information</p>
           <div className="name">
             <label >

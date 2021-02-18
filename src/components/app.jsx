@@ -3,8 +3,8 @@ import Form_1 from './form-1.js';
 import Form_2 from './form-2.js';
 import Form_3 from './form-3.js';
 import Confirmation from './confirmation.js';
-// import React from 'react';
-// import axios from 'axios';
+import React from 'react';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor () {
@@ -43,14 +43,27 @@ class App extends React.Component {
     })
   }
 
-  postUser(user, callback) {
-    axios.post('/users', user)
-    .then(callback)
-    .catch(callback)
+  postUser() {
+    var user = {
+      name: '',
+      email: '',
+      password: ''
+    }
+    axios.post('127.0.0.1:3000/users', user)
+    .then((result) => { console.log(result); })
+    .catch((err) => { console.error(err); })
   }
 
-  addUser(user) {
+  postShippingInfo(shippingInfo, callback) {
+    axios.post('/shippingInfo', shippingInfo)
+    .then((result) => { callback(result); })
+    .catch((result) => { callback(result); })
+  }
 
+  postBillingInfo(billingInfo, callback) {
+    axios.post('/billingInfo', billingInfo)
+    .then((result) => { callback(result); })
+    .catch((result) => { callback(result); })
   }
 
   Render(props) {
@@ -59,7 +72,7 @@ class App extends React.Component {
     if (current === 0) {
       return <Checkout onClick={this.onCheckoutClick}/>
     } else if (current === 1) {
-      return <Form_1 />
+      return <Form_1 postUser={this.postUser}/>
     } else if (current === 2) {
       return <Form_2 />
     } else if (current === 3) {

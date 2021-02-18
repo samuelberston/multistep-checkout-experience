@@ -5,11 +5,17 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "transpile": "npx babel . --watch --out-dir compiled --presets=@babel/preset-react --ignore=node_modules,compiled --source-maps inline"
+    "build": "webpack",
+    "transpile": "npx babel . --watch --out-dir compiled --presets=@babel/preset-react --ignore=node_modules,compiled --source-maps inline",
+    "server-start": "nodemon server/server.js",
+    "database-start": "mysql -u root -p < schema.sql",
+    "mysql": "mysql -u root -p"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "live-server": "^1.2.1",
     "mysql": "^2.18.1",
@@ -22,6 +28,8 @@
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/preset-react": "^7.12.1",
-    "axios": "^0.21.1"
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0"
   }
 }

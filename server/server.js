@@ -2,23 +2,25 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const path = require('path');
+const bodyParser = require('body-parser');
 
-const db = require('../db/connection.js')
+const db = require('../db/connection.js');
 
-app.use(express.static('client'));
+app.use(express.static('/../index.html'));
 
-const logger = (request, response, next) => {
-  console.log(`Receiving request to ${request.url} with method ${request.method}`)
-  next();
-}
+// const logger = (request, response, next) => {
+//   console.log(`Receiving request to ${request.url} with method ${request.method}`)
+//   next();l
+// }
 
-app.use('/', logger);
+// app.use('/', logger);
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
-app.post('/users',
-  function(req, res) {
-    console.log('req: ', req);
-    console.log('res: ', res);
+app.post('/users', function(req, res) {
+    console.log('in server', req.body);
+    // console.log('res: ', res);
     // const query = `INSERT INTO users (name, email, password) VALUES ('${req.body.name}', '${req.body.email}', '${req.body.password}')`;
 
     // db.query(query, (err, result) => {
